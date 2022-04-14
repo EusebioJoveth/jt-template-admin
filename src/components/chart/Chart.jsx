@@ -1,6 +1,6 @@
 import React from 'react';
 import "./chart.scss";
-import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
+import { XAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
 
 const data = [
   {name: "Janeiro", Total: 1200 },

@@ -31,6 +31,7 @@ const New = ({inputs, title}) => {
                 </label>
                 <input type="file" id='file' onChange={(e)=>setFile(e.target.files[0])} style={{display: "none"}}/>
             </div>
+            
             {inputs.map((input)=>(
                <div className="formInput" key={input.id}>
                <label htmlFor="name">{input.label}</label>

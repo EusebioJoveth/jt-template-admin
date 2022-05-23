@@ -3,9 +3,21 @@ import "./new.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import { DriveFolderUploadOutlined } from '@mui/icons-material';
+import {createUser} from "./../../services/userService";
 
 const New = ({inputs, title}) => {
   const [file, setFile] = useState("");
+
+  const handleNew = (e) =>{
+    e.preventDefault();
+
+    createUser("").then(res =>{
+      console.log(res)
+
+    }).catch(error=>{
+      console.log("Erro");
+    });
+  }
 
   return (
     <div className='new'>
@@ -24,7 +36,7 @@ const New = ({inputs, title}) => {
             } alt="" />
           </div>
           <div className="right">
-            <form>
+            <form onSubmit={handleNew}>
             <div className="formInput">
                 <label htmlFor="file">
                   Imagem: <DriveFolderUploadOutlined className='icon'/>
@@ -39,7 +51,7 @@ const New = ({inputs, title}) => {
              </div>
 
              ))}
-              <button>Salvar</button>
+              <button type='submit'>Salvar</button>
             </form>
           </div>
         </div>
